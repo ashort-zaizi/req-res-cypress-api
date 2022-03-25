@@ -1,0 +1,62 @@
+[
+  {
+    "keyword": "Feature",
+    "name": "ReqRes User API",
+    "line": 1,
+    "id": "reqres-user-api",
+    "tags": [],
+    "uri": "User.feature",
+    "elements": [
+      {
+        "id": "reqres-user-api;as-an-reqres-user-i-want-to-get-details-of-all-users-so-that-i-can-see-what-users-exist",
+        "keyword": "Scenario",
+        "line": 3,
+        "name": "As an reqres user I want to get details of all users so that I can see what users exist",
+        "tags": [],
+        "type": "scenario",
+        "steps": [
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 4,
+            "name": "I have the GET users end point",
+            "result": {
+              "status": "passed",
+              "duration": 39000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 5,
+            "name": "I send a GET users request",
+            "result": {
+              "status": "passed",
+              "duration": 84000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 6,
+            "name": "response status code equals 200",
+            "result": {
+              "status": "passed",
+              "duration": 5000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 7,
+            "name": "response body contains all users",
+            "result": {
+              "status": "passed",
+              "duration": 5000000
+            }
+          }
+        ]
+      }
+    ]
+  }
+]
