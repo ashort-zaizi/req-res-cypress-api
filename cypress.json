@@ -1,6 +1,0 @@
-{
-    "env": {
-        "reqresUrl": "https://reqres.in/"
-    },
-    "testFiles": "**/*.feature"
-}

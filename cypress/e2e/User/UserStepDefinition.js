@@ -1,16 +1,17 @@
 /// <reference types="cypress" />
 
-import { should } from "chai";
-import { Given, When, Then, And  } from "cypress-cucumber-preprocessor/steps";
+import { Given, When, Then, And } from '@badeball/cypress-cucumber-preprocessor';
 
 let apiEndPoint;
 let response;
 let userid;
 
+const baseUrl = Cypress.config('baseUrl')
+
 before(() => {
     cy.request({
         method: 'POST',
-        url: Cypress.env('reqresUrl') + 'api/users',
+        url: baseUrl + 'api/users',
         body: {
             "name": "NEW USER",
             "job": "NEW TESTER"
@@ -23,34 +24,34 @@ before(() => {
 after(() => {
     cy.request({
         method: 'DELETE',
-        url: Cypress.env('reqresUrl') + 'api/users/' + userid
+        url: baseUrl + 'api/users/' + userid
     }).then((resp) => {
 
     })
 })
 
 Given('I have the GET users end point', () => {
-    apiEndPoint = Cypress.env('reqresUrl') + 'api/users?page=2';
+    apiEndPoint = baseUrl + 'api/users?page=2';
 })
 
 Given('I have the GET single user end point with the id of a user that exists', () => {
-    apiEndPoint = Cypress.env('reqresUrl') + 'api/users/2';
+    apiEndPoint = baseUrl + 'api/users/2';
 })
 
 Given('I have the GET single user end point with the id of a user that does not exist', () => {
-    apiEndPoint = Cypress.env('reqresUrl') + 'api/users/66';
+    apiEndPoint = baseUrl + 'api/users/66';
 })
 
 Given('I have the create new user end point', () => {
-    apiEndPoint = Cypress.env('reqresUrl') + 'api/users';
+    apiEndPoint = baseUrl + 'api/users';
 })
 
 Given('I have the update user end point with the user id of the user I want to update', () => {
-    apiEndPoint = Cypress.env('reqresUrl') + 'api/users/' + userid;
+    apiEndPoint = baseUrl + 'api/users/' + userid;
 })
 
 Given('I have the delete user end point with the user id of the user I want to delete', () => {
-    apiEndPoint = Cypress.env('reqresUrl') + 'api/users/' + userid;
+    apiEndPoint = baseUrl + 'api/users/' + userid;
 })
 
 When('I send a request to GET users', () => {
